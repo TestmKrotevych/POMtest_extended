@@ -17,7 +17,7 @@ public class RubyTest {
 	GoogleWelcome objPageOne;
 	Results objPageTwo;*/
 	
-	TestCore objCore;
+	//TestCore objCore;
 	
 	@BeforeTest
 	public void initialize () {
@@ -27,8 +27,9 @@ public class RubyTest {
 	      driver.manage().window().maximize();	*/
 	      
 	      
-	      objCore =new TestCore ();
-	      driver=objCore.makeInitialisation();
+	      //objCore =new TestCore ();
+		
+	      driver=TestCore.makeInitialisation();
 	}
 	
 	
@@ -40,7 +41,7 @@ public class RubyTest {
 		objPageTwo = new Results (driver);
 		Assert.assertTrue(objPageTwo.getSearchResSize() != 0);*/
 		
-		objCore.performQueryTest(driver, "Ruby");
+		TestCore.performQueryTest(driver, "Ruby");
 		
 		
 	}

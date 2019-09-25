@@ -9,7 +9,7 @@ import pages.Results;
 
 public class JavaTest {
 	WebDriver driver;
-	TestCore objCore;
+	//TestCore objCore;
 	
 	/*public String baseUrl = "http://google.com";
 	String driverPath = "libdriver\\chromedriver.exe";
@@ -26,8 +26,9 @@ public class JavaTest {
 	      driver.get(baseUrl);
 	      driver.manage().window().maximize();	*/
 		
-		  objCore =new TestCore ();
-	      driver=objCore.makeInitialisation();
+		  //objCore =new TestCore ();
+		
+	      driver=TestCore.makeInitialisation();
 	}
 	
 	
@@ -39,7 +40,7 @@ public class JavaTest {
 		objPageTwo = new Results (driver);
 		Assert.assertTrue(objPageTwo.getSearchResSize() != 0);*/
 		
-		objCore.performQueryTest(driver, "Java");
+		TestCore.performQueryTest(driver, "Java");
 	}
 	
 	@AfterTest

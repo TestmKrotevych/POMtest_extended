@@ -8,13 +8,13 @@ import pages.GoogleWelcome;
 import pages.Results;
 
 public class TestCore {
-	public String baseUrl = "http://google.com";
-	String driverPath = "libdriver\\chromedriver.exe";
-	WebDriver driver;
-	GoogleWelcome objPageOne;
-	Results objPageTwo;
+	public static String baseUrl = "http://google.com";
+	static String driverPath = "libdriver\\chromedriver.exe";
+	static WebDriver driver;
+	static GoogleWelcome objPageOne;
+	static Results objPageTwo;
 	
-	public  WebDriver makeInitialisation () {
+	public  static WebDriver makeInitialisation () {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
 	      driver.get(baseUrl);
@@ -22,7 +22,7 @@ public class TestCore {
 	      return driver;
 	}
 	
-	public void performQueryTest (WebDriver driver, String query)
+	public static void performQueryTest (WebDriver driver, String query)
 	{
 		objPageOne = new GoogleWelcome(driver);
 		objPageOne.performSearch(query);
